@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+      
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+       
+        .btn {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .heart {
+            position: relative;
+            width: 100px;
+            height: 100px;
+            animation: beat 0.8s infinite;
+        }
+
+        .heart::before,
+        .heart::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            width: 100px;
+            height: 160px;
+            border-radius: 50px 50px 0 0;
+            background-color: red;
+        }
+
+        .heart::before {
+            left: 100px;
+            transform: rotate(-45deg);
+            transform-origin: 0 100%;
+        }
+
+        .heart::after {
+            left: 0;
+            transform: rotate(45deg);
+            transform-origin: 100% 100%;
+        }
+
+        @keyframes beat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+        }
+    </style>
+</head>
+<body>
+   
+    <div class="heart"></div>
+
+    <button class="btn" type="button" onclick="openPage()">Click Here</button>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.10/typed.min.js"></script>
+    <script>
+    
+        var typed = new Typed(".input", {
+            strings: ["Vuxa Jovial Chabalala", "Hey I just wanted to let you know that you are amazing", "I love and appreciate you"],
+            typeSpeed: 50,
+            backSpeed: 25,
+            loop: true
+        });
+
+        
+        function openPage() {
+            window.location.href = "index.html";
+        }
+    </script>
+</body>
+</html>
